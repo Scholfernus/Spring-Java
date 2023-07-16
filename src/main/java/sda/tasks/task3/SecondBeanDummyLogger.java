@@ -8,9 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @Primary
-public class SecondBeanDummyLogger implements CommandLineRunner {
+public class SecondBeanDummyLogger implements DummyLogger {
+
     @Override
-    public void run(String... args) throws Exception {
-      log.info("Hello this is second Bean");
+    public void sayHello() {
+        log.info("Hi, this is second bean");
     }
 }
