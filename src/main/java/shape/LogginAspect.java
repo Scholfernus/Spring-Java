@@ -1,4 +1,5 @@
 package shape;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ public class LogginAspect {
     public Object logSquareArea(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println("Obliczanie pola figury...");
 
-        // Wykonanie metody, do której zostało zastosowane @Around
+        // Wykonuje metodę, do której zostało zastosowane @Around
         Object result = joinPoint.proceed();
 
         System.out.println("Obliczenie pola figury zakończone.");
