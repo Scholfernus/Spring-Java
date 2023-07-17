@@ -12,6 +12,12 @@ public class DataBaseConnection {
     @Value("test")
     private String password;
 
+    public DataBaseConnection(String host, String userName, String password) {
+        this.host = host;
+        this.userName = userName;
+        this.password = password;
+    }
+
     public void addUserToDataBase(String name){
         System.out.println("User added do db1");
     }
