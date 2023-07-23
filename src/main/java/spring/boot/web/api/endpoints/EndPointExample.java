@@ -1,12 +1,12 @@
-package spring.boot.web.api;
+package spring.boot.web.api.endpoints;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-@Controller
+
 @RestController
 public class EndPointExample {
-@GetMapping("/")
+@GetMapping("/paulDemo")
     public String getSomeValue()
-    {return "Hello World";}
+    {return "Hello World, this is my first web application " +
+            " P A U L        W E B S I T E ";}
 }
