@@ -13,10 +13,9 @@ public class NamedPairsController {
 
     @GetMapping("/api/pairs/{name}")
     public NamedPairs getNamedPairs(@PathVariable("name") String name) {
-        // utwórz i zwróć obiekt typu NamedPairs
         return NamedPairs.builder()
-                .name(name) // ustaw pole name na wartość parametru
-                .pairs(Collections.emptyMap()) // ustaw pole pairs na pustą mapę
+                .name(name)
+                .pairs(Collections.emptyMap())
                 .build();
     }
 }
