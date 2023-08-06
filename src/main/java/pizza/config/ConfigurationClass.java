@@ -10,12 +10,13 @@ import javax.swing.plaf.PanelUI;
 
 @Configuration
 public class ConfigurationClass {
-@Bean
-    public Pizza pizza(){
-    return new GoodPizza(15,"Klasyczna");
-}
-@Bean(name = "Hawajska")
-    public Order order(Pizza pizza){
-    return new Order(pizza);
-}
+    @Bean
+    public Pizza pizza() {
+        return new GoodPizza(15, "Klasyczna");
+    }
+
+    @Bean(name = "Hawajska")
+    public Order order(Pizza pizza) {
+        return new Order(pizza);
+    }
 }
