@@ -1,28 +1,28 @@
 package sda.tasks.task10;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Entity;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-@Entity
-@Table(name = "books")
+@Entity(name = "books")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "title")
     private String title;
+    @Column(name = "author")
+
     private String author;
+    @Column(name = "isbn")
+
     private String ISBN;
+    @Column(name = "pagesNum")
     private Integer pagesNum;
 }

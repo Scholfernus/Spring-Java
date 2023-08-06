@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @SpringBootApplication
-@EntityScan(basePackages = "sda.tasks.task10")
-@EnableJpaRepositories(basePackages = "sda.tasks.task10")
 public class Tas10Application {
     public static void main(String[] args) {
         SpringApplication.run(Tas10Application.class, args);

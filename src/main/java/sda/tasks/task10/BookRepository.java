@@ -1,23 +1,25 @@
 package sda.tasks.task10;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
-@Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-    List<Book> findByTitle(String title);
+    List<Book> findAllByTitle(String title);
 
-    Book findByISBN(String ISBN);
+    Optional<Book> findFirstByISBN(String isbn);
 
-    Book findByAuthorAndISBN(String author, String ISBN);
+    Optional<Book> findAllByTitleAndAuthor(String title, String author);
 
     List<Book> findTop3ByAuthorOrderByPagesNumDesc(String author);
 
-    List<Book> findByTitleStartingWith(String prefix);
+    List<Book> findAllByTitleStartingWith(String prefix);
 
-    List<Book> findByPagesNumGreaterThan(int pagesNum);
+    List<Book> findAllByPagesNumBetween(Integer min, Integer max);
 
-    List<Book> findByPagesNumBetween(Integer min, Integer max);
+    @Query("SELECT b FROM books b WHERE b.pagesNum >= :pagesNum")
+    List<Book> findWherePagesNumIsGreaterThanX(@Param("pagesNum") Integer pagesNum);
 }
